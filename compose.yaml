@@ -1,0 +1,16 @@
+﻿services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: prac_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata-prac:/var/lib/postgresql/data
+    ports:
+      - "5447:5432"
+
+volumes:
+  pgdata-prac:
