@@ -947,12 +947,12 @@ else if (args.Length > 0 && args[0] == "pdf")
                 }
 
                 var price_xSeries = price_chart.XValues.AddXSeries();
-                price_xSeries.Add((prices.Count - 1).ToString());
+                price_xSeries.Add(prices[0].Item1.ToString());
                 for (int i = prices.Count - 2; i >= 0; i--)
                 {
                     if (i % (prices.Count / 5) == 0)
                     {
-                        price_xSeries.Add(i.ToString());
+                        price_xSeries.Add(prices[prices.Count - i - 1].Item1.ToString());
                     }
                     else
                     {
